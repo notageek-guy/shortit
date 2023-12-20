@@ -6,6 +6,7 @@ import EmailProvider from "next-auth/providers/email";
 import GithubProvider from "next-auth/providers/github";
 export const authOptions = {
   secret: process.env.NEXTAUTH_SECRET!,
+  
   adapter: PrismaAdapter(prisma),
   pages: {
     signIn: "/auth",
