@@ -21,13 +21,16 @@ const Shortener: React.FC = () => {
       try {
         const linkId = nanoid();
         console.log(session);
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/link/${linkId}`, {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(url),
-        });
+        const res = await fetch(
+          `https://shortit-18ofh94wo-manishkumar180.vercel.app/api/link/${linkId}`,
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(url),
+          }
+        );
         if (res.ok) {
           const data = await res.json();
           setUrl("");
