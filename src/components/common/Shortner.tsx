@@ -22,7 +22,9 @@ const Shortener: React.FC = () => {
         const linkId = nanoid();
         console.log(session);
         const res = await fetch(
-          `https://shortit-18ofh94wo-manishkumar180.vercel.app/api/link/${linkId}`,
+          `
+          ${process.env.NEXTAUTH_URL}
+          /${linkId}`,
           {
             method: "POST",
             headers: {

@@ -18,7 +18,7 @@ export async function POST(
     const existingURL = await prisma.link.findFirst({ where: { url } });
 
     if (existingURL) {
-      const dynamicUrl = `${`https://shortit-18ofh94wo-manishkumar180.vercel.app/`}${existingURL.linkId}`;
+      const dynamicUrl = `${process.env.NEXTAUTH_URL}${existingURL.linkId}`;
       return NextResponse.json({
         message: "URL already exists",
         url: dynamicUrl,
@@ -38,9 +38,7 @@ export async function POST(
       return NextResponse.json({ message: "Error creating link" });
     }
 
-    const linkUrl = `${`https://shortit-18ofh94wo-manishkumar180.vercel.app/`}${
-      createdLink.linkId
-    }`;
+    const linkUrl = `${process.env.NEXTAUTH_URL}${createdLink.linkId}`;
     return NextResponse.json({
       status: "OK",
       url: linkUrl,
