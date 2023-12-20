@@ -21,7 +21,7 @@ const Shortener: React.FC = () => {
       try {
         const linkId = nanoid();
         console.log(session);
-        const res = await fetch(`http://localhost:3000/api/link/${linkId}`, {
+        const res = await fetch(`/api/link/${linkId}`, {
           method: "POST",
           headers: {
             "content-type": "application/json",

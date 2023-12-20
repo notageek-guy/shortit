@@ -11,7 +11,7 @@ const DESCRIPTION =
   "ShortId is a URL shortener which allows user to shorten the url and share or copy shortened URLs";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL(""),
   title: APP_TITLE,
   description: DESCRIPTION,
   creator: "Manish Kumar",
