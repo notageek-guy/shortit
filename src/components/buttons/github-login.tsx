@@ -7,11 +7,7 @@ import { signIn } from "next-auth/react";
 function GithubLogin() {
   return (
     <Button
-      onClick={() =>
-        signIn("github", {
-          callbackUrl: "/",
-        })
-      }
+      onClick={() => signIn("github", {})}
       className="mt-5"
       variant="secondary"
     >
